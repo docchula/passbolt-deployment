@@ -14,7 +14,7 @@ services:
       - jwt_volume:/etc/passbolt/jwt
     command: "/docker-entrypoint.sh"
     ports:
-      - 8080:80
+      - 8085:80
     labels:
       # Traefik configuration discovery
       # https://doc.traefik.io/traefik/providers/docker/#routing-configuration-with-labels
@@ -27,7 +27,7 @@ services:
       - "traefik.http.routers.passbolt-https.rule=Host(`passbolt-new.docchula.com`)"
       - "traefik.http.routers.passbolt-https.entrypoints=websecure"
       - "traefik.http.routers.passbolt-https.tls.certresolver=leresolver"
-      - "traefik.http.services.passbolt-https.loadbalancer.server.port=8080"
+      - "traefik.http.services.passbolt-https.loadbalancer.server.port=8085"
 
 volumes:
   gpg_volume:
