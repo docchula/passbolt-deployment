@@ -14,7 +14,7 @@ services:
       - jwt_volume:/etc/passbolt/jwt
     command: "/docker-entrypoint.sh"
     ports:
-      - 80:8080
+      - 8080:80
     labels:
       # Traefik configuration discovery
       # https://doc.traefik.io/traefik/providers/docker/#routing-configuration-with-labels
